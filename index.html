@@ -201,6 +201,28 @@
     background:var(--paper);border-radius:14px;padding:14px 18px;margin-bottom:22px}
   .deal .center-cta{text-align:center}
   @media(max-width:430px){ .perks{grid-template-columns:1fr} }
+  /* 子頁底部：跳另一支 + 返回主頁 */
+  .crosslink{display:flex;align-items:center;gap:14px;max-width:560px;margin:0 auto 20px;
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px 18px;
+    cursor:pointer;box-shadow:0 10px 30px -20px rgba(62,36,86,.3);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  .crosslink:hover{transform:translateY(-4px);box-shadow:0 26px 50px -26px rgba(62,36,86,.45)}
+  .crosslink:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+  .crosslink .cl-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+    font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;flex:none}
+  .crosslink.p .cl-ic{background:var(--plum)}
+  .crosslink.g .cl-ic{background:var(--tea)}
+  .crosslink .cl-main{flex:1;min-width:0}
+  .crosslink .cl-main .s{font-size:12px;color:var(--ink-soft);font-weight:300}
+  .crosslink .cl-main b{display:block;font-family:var(--serif);font-weight:700;font-size:16.5px;color:var(--ink);line-height:1.4}
+  .crosslink .arrow{flex:none;font-weight:700;font-size:18px}
+  .crosslink.p .arrow{color:var(--plum)}
+  .crosslink.g .arrow{color:var(--tea)}
+  .home-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:999px;
+    background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:14.5px;
+    cursor:pointer;transition:transform .3s,color .3s,border-color .3s;font-family:var(--sans)}
+  .home-btn:hover{transform:translateY(-2px);color:var(--plum);border-color:var(--plum)}
+  .home-btn:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
 
   /* ---------------- 底部購買列 ---------------- */
   .buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
@@ -429,6 +451,52 @@
       </div>
     </div>
   </section>
+
+  <!-- 開團資訊（子頁同步）-->
+  <section class="block deal">
+    <div class="wrap">
+      <div class="seclabel">塔塔流 · 限時團購</div>
+      <h2 class="sechead">開團資訊</h2>
+      <p class="secsub">這次優惠期間，給你多一點。</p>
+      <div class="dealcard">
+        <div class="top"><div class="k">限 時 快 閃</div><div class="d">✨ 6/25 – 6/30 優惠</div></div>
+        <div class="body">
+          <div class="perks">
+            <div class="pk"><span class="ck">✓</span>限時團購價</div>
+            <div class="pk"><span class="ck">✓</span>免運優惠</div>
+            <div class="pk"><span class="ck">✓</span>可刷卡</div>
+            <div class="pk"><span class="ck">✓</span>可超取付款</div>
+          </div>
+          <div class="gift-h">購買後截圖私訊塔塔</div>
+          <div class="gift-s">完成購買，加贈你這三項：</div>
+          <div class="gifts">
+            <div class="gift"><div class="ic">🎯</div><div class="t"><b>1:1 瘦身目標設定</b><span>依你的目標體態量身設定</span></div></div>
+            <div class="gift"><div class="ic">🥗</div><div class="t"><b>飲食習慣診斷</b><span>找出影響代謝的小地方</span></div></div>
+            <div class="gift"><div class="ic">🍽️</div><div class="t"><b>三餐份量建議</b><span>不用餓肚子的吃法</span></div></div>
+          </div>
+          <p class="gift-note">我會依照你的生活型態、飲食習慣、目標體態，幫你抓出比較適合你的吃法與搭配方式。</p>
+          <div class="center-cta">
+            <a class="cta buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 看另一位主角 + 返回主頁 -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="crosslink g" role="button" tabindex="0" onclick="go('green')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('green')}">
+        <div class="cl-ic">綠</div>
+        <div class="cl-main"><span class="s">接著看另一位主角</span><b>綠兒茶纖纖丸 · 脂肪搬運手</b></div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="center-cta">
+        <button class="home-btn" onclick="go('home')">↑ 返回主頁</button>
+      </div>
+    </div>
+  </section>
+
 </section>
 
 <!-- ============================================================
@@ -477,6 +545,52 @@
 
     </div>
   </section>
+
+  <!-- 開團資訊（子頁同步）-->
+  <section class="block deal">
+    <div class="wrap">
+      <div class="seclabel">塔塔流 · 限時團購</div>
+      <h2 class="sechead">開團資訊</h2>
+      <p class="secsub">這次優惠期間，給你多一點。</p>
+      <div class="dealcard">
+        <div class="top"><div class="k">限 時 快 閃</div><div class="d">✨ 6/25 – 6/30 優惠</div></div>
+        <div class="body">
+          <div class="perks">
+            <div class="pk"><span class="ck">✓</span>限時團購價</div>
+            <div class="pk"><span class="ck">✓</span>免運優惠</div>
+            <div class="pk"><span class="ck">✓</span>可刷卡</div>
+            <div class="pk"><span class="ck">✓</span>可超取付款</div>
+          </div>
+          <div class="gift-h">購買後截圖私訊塔塔</div>
+          <div class="gift-s">完成購買，加贈你這三項：</div>
+          <div class="gifts">
+            <div class="gift"><div class="ic">🎯</div><div class="t"><b>1:1 瘦身目標設定</b><span>依你的目標體態量身設定</span></div></div>
+            <div class="gift"><div class="ic">🥗</div><div class="t"><b>飲食習慣診斷</b><span>找出影響代謝的小地方</span></div></div>
+            <div class="gift"><div class="ic">🍽️</div><div class="t"><b>三餐份量建議</b><span>不用餓肚子的吃法</span></div></div>
+          </div>
+          <p class="gift-note">我會依照你的生活型態、飲食習慣、目標體態，幫你抓出比較適合你的吃法與搭配方式。</p>
+          <div class="center-cta">
+            <a class="cta buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 看另一位主角 + 返回主頁 -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="crosslink p" role="button" tabindex="0" onclick="go('purple')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('purple')}">
+        <div class="cl-ic">紫</div>
+        <div class="cl-main"><span class="s">接著看另一位主角</span><b>紫花青代謝丸 · 修復能量爐</b></div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="center-cta">
+        <button class="home-btn" onclick="go('home')">↑ 返回主頁</button>
+      </div>
+    </div>
+  </section>
+
 </section>
 
 </main>
