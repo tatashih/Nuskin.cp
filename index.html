@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>代謝 CP｜塔塔流 TATA FLOW</title>
+<meta name="description" content="紫花青代謝丸 × 綠兒茶纖纖丸——塔塔自己喝超過五年的代謝保養組合。一個修復、一個搬運，雙核心一起才完整。">
+<meta property="og:title" content="代謝 CP｜塔塔流 TATA FLOW">
+<meta property="og:description" content="紫花青代謝丸 × 綠兒茶纖纖丸，塔塔的代謝循環水基底。">
+<meta property="og:image" content="https://myship.7-11.com.tw/i/cgdm/GM2606241638164/2606241230594594.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* =================================================================
+     塔塔流 · 代謝CP 一頁式
+     ▸ 賣貨便賣場連結 = 下方 .buy-link 的 href（要改在這裡找 SHOP_URL）
+     ▸ 圖片都放在 images/ 資料夾，跟 index.html 放一起上傳即可
+     ▸ 綠兒茶介紹圖之後放進 #green 的 .gallery 裡（已留好範例）
+     ================================================================= */
+  :root{
+    --paper:#F7F4FA;
+    --paper-2:#EEE8F4;
+    --ink:#2C2233;
+    --ink-soft:#6B5E73;
+    --plum:#5E3A7E;
+    --plum-deep:#3E2456;
+    --plum-soft:#EADFF3;
+    --tea:#4E7A52;
+    --tea-deep:#2F4F35;
+    --tea-soft:#DEEBDB;
+    --gold:#A9803C;
+    --line:#E4DAEC;
+    --flow:linear-gradient(135deg,var(--plum) 0%,#6A5A8E 48%,var(--tea) 100%);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --shadow:0 18px 50px -22px rgba(62,36,86,.32);
+    --maxw:680px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-weight:400;line-height:1.85;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    padding-bottom:0;
+  }
+  body.detail{padding-bottom:78px}      /* 留位置給底部購買列 */
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------------- 頂部列 ---------------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:rgba(247,244,250,.86);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .topbar .logo{font-family:var(--serif);font-weight:700;letter-spacing:.06em;color:var(--plum-deep);font-size:16px}
+  .topbar .logo small{font-weight:500;color:var(--tea);font-size:11px;letter-spacing:.18em;margin-left:6px}
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 16px;border-radius:999px;background:var(--flow);color:#fff;
+    font-size:13px;font-weight:700;letter-spacing:.03em;box-shadow:var(--shadow);
+    transition:transform .3s;
+  }
+  .pill:hover{transform:translateY(-2px)}
+  .pill:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+
+  /* ---------------- view 切換 ---------------- */
+  .view{display:none;animation:fade .5s ease}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* ---------------- HERO ---------------- */
+  .hero{position:relative;text-align:center;padding:54px 0 40px;overflow:hidden}
+  .hero::before{content:"";position:absolute;left:50%;top:-28%;width:80vw;max-width:680px;aspect-ratio:1;
+    transform:translateX(-50%);background:radial-gradient(circle,rgba(94,58,126,.10),transparent 62%);z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{font-weight:500;letter-spacing:.32em;font-size:11.5px;color:var(--plum);text-transform:uppercase;margin-bottom:18px}
+  .eyebrow b{color:var(--tea);font-weight:500}
+  .title{font-family:var(--serif);font-weight:300;font-size:clamp(58px,17vw,116px);line-height:.96;color:var(--plum-deep)}
+  .title .cp{background:var(--flow);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .subtitle{margin-top:14px;font-family:var(--serif);font-weight:500;font-size:clamp(16px,4.4vw,22px);letter-spacing:.03em}
+  .subtitle .dot{display:inline-block;width:8px;height:8px;border-radius:50%;vertical-align:middle;margin:0 3px 3px}
+  .dot.p{background:var(--plum)}.dot.g{background:var(--tea)}
+  .lead{max-width:520px;margin:20px auto 0;font-weight:300;font-size:15.5px;color:var(--ink-soft)}
+  .cta{
+    display:inline-flex;align-items:center;gap:11px;margin-top:30px;
+    padding:16px 38px;border-radius:999px;background:var(--flow);color:#fff;
+    font-weight:700;font-size:16px;letter-spacing:.05em;box-shadow:var(--shadow);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+  }
+  .cta:hover{transform:translateY(-3px);box-shadow:0 26px 60px -20px rgba(62,36,86,.5)}
+  .cta:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+  .cta .arrow{transition:transform .35s}.cta:hover .arrow{transform:translateX(5px)}
+
+  /* ---------------- 區段 ---------------- */
+  section.block{padding:46px 0}
+  .seclabel{text-align:center;font-weight:500;letter-spacing:.3em;font-size:11.5px;color:var(--tea);text-transform:uppercase;margin-bottom:12px}
+  .sechead{text-align:center;font-family:var(--serif);font-weight:500;font-size:clamp(25px,6vw,38px);color:var(--plum-deep);line-height:1.25;margin-bottom:8px}
+  .secsub{text-align:center;color:var(--ink-soft);font-weight:300;font-size:14.5px;max-width:480px;margin:0 auto 32px}
+
+  /* ---------------- 塔塔的話 ---------------- */
+  .story-card{background:#fff;border:1px solid var(--line);border-radius:22px;
+    padding:42px clamp(24px,6vw,52px);box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .story-card::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:var(--flow)}
+  .story-q{font-family:var(--serif);font-size:54px;color:var(--plum-soft);line-height:.4;height:26px}
+  .story-card p{font-weight:300;font-size:16px;color:var(--ink);margin-bottom:16px}
+  .story-card p strong{font-weight:700;color:var(--plum)}
+  .story-card .sign{margin-top:22px;font-family:var(--serif);font-weight:500;color:var(--tea-deep);letter-spacing:.04em}
+
+  /* ---------------- 圖片畫廊 ---------------- */
+  .gallery{display:flex;flex-direction:column;gap:20px;max-width:560px;margin:0 auto}
+  .gallery figure{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:var(--flow);min-height:120px}
+  .gallery img{width:100%;height:auto}
+
+  /* ---------------- 兩個入口卡 ---------------- */
+  .entries{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .entry{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:22px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(62,36,86,.25);
+    cursor:pointer;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;text-align:left}
+  .entry:hover{transform:translateY(-7px);box-shadow:0 30px 60px -24px rgba(62,36,86,.45)}
+  .entry:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+  .entry .thumb{aspect-ratio:4/5;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .entry.p .thumb{background:linear-gradient(160deg,#F3ECF8,var(--plum-soft))}
+  .entry.g .thumb{background:linear-gradient(160deg,#EBF2E9,var(--tea-soft))}
+  .entry .thumb img{width:100%;height:100%;object-fit:contain;transition:transform .6s}
+  .entry:hover .thumb img{transform:scale(1.03)}
+  .entry-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .entry .role{font-size:11.5px;font-weight:700;letter-spacing:.14em;padding:4px 11px;border-radius:999px;color:#fff;align-self:flex-start;margin-bottom:11px}
+  .entry.p .role{background:var(--plum)}.entry.g .role{background:var(--tea)}
+  .entry-body h3{font-family:var(--serif);font-weight:700;font-size:19px;margin-bottom:6px;color:var(--ink)}
+  .entry-body p{font-weight:300;font-size:13.5px;color:var(--ink-soft);flex:1}
+  .entry-go{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-size:13.5px;font-weight:700;letter-spacing:.03em;display:flex;align-items:center;justify-content:space-between}
+  .entry.p .entry-go{color:var(--plum)}.entry.g .entry-go{color:var(--tea)}
+  .entry-go .arrow{transition:transform .35s}.entry:hover .entry-go .arrow{transform:translateX(5px)}
+
+  /* ---------------- 詳情頁頭 ---------------- */
+  .dhead{padding:30px 0 8px;text-align:center;position:relative}
+  .back{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--ink-soft);
+    background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;margin-bottom:24px;
+    cursor:pointer;transition:transform .3s,color .3s}
+  .back:hover{transform:translateX(-3px);color:var(--plum)}
+  .back:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+  .dtag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.16em;color:#fff;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+  .dhead.p .dtag{background:var(--plum)}.dhead.g .dtag{background:var(--tea)}
+  .dtitle{font-family:var(--serif);font-weight:700;font-size:clamp(30px,8vw,46px);line-height:1.12}
+  .dhead.p .dtitle{color:var(--plum-deep)}.dhead.g .dtitle{color:var(--tea-deep)}
+  .dsub{margin-top:10px;color:var(--ink-soft);font-weight:300;font-size:14.5px}
+
+  /* ---------------- 綠兒茶文字內容 ---------------- */
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:560px;margin:0 auto 26px}
+  .feat .f{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 14px;text-align:center;box-shadow:0 10px 30px -20px rgba(47,79,53,.3)}
+  .feat .f .ic{font-size:24px;margin-bottom:8px}
+  .feat .f h4{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--tea-deep);margin-bottom:4px}
+  .feat .f p{font-size:12px;color:var(--ink-soft);font-weight:300;line-height:1.6}
+  .ingbar{max-width:560px;margin:0 auto 26px;background:linear-gradient(150deg,#fff,var(--tea-soft));
+    border:1px solid #D2E5CF;border-radius:18px;padding:24px 26px;box-shadow:var(--shadow)}
+  .ingbar h4{font-family:var(--serif);font-weight:700;color:var(--tea-deep);font-size:17px;margin-bottom:10px}
+  .ingbar ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .ingbar li{display:flex;gap:10px;font-size:14.5px;font-weight:400}
+  .ingbar li b{color:var(--tea-deep)}
+  .ingbar .gem{color:var(--tea);flex:none}
+  .placeholder{max-width:560px;margin:0 auto;border:2px dashed #C7D9C4;border-radius:18px;
+    padding:40px 24px;text-align:center;color:var(--tea-deep);background:rgba(222,235,219,.35)}
+  .placeholder b{display:block;font-family:var(--serif);font-size:16px;margin-bottom:6px}
+  .placeholder span{font-size:13px;color:var(--ink-soft);font-weight:300}
+  /* 紫花青版本（修復）配色 */
+  .feat.p .f h4{color:var(--plum-deep)}
+  .feat.p .f{box-shadow:0 10px 30px -20px rgba(62,36,86,.3)}
+  .ingbar.p{background:linear-gradient(150deg,#fff,var(--plum-soft));border-color:#E3D2F0}
+  .ingbar.p h4{color:var(--plum-deep)}
+  .ingbar.p .gem{color:var(--plum)}
+  .ingbar.p li b{color:var(--plum-deep)}
+  /* 開團資訊 */
+  .deal{background:linear-gradient(180deg,var(--paper),var(--paper-2))}
+  .dealcard{max-width:600px;margin:0 auto;background:#fff;border:1px solid var(--line);
+    border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}
+  .dealcard .top{background:var(--flow);color:#fff;text-align:center;padding:24px 22px}
+  .dealcard .top .k{font-size:11.5px;font-weight:500;letter-spacing:.34em;opacity:.92;margin-bottom:8px}
+  .dealcard .top .d{font-family:var(--serif);font-weight:700;font-size:clamp(23px,6vw,31px);letter-spacing:.02em}
+  .dealcard .body{padding:26px clamp(18px,5vw,30px) 28px}
+  .perks{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:26px}
+  .perks .pk{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:13px 15px;font-weight:600;font-size:14.5px}
+  .perks .pk .ck{width:21px;height:21px;border-radius:50%;background:var(--tea);color:#fff;
+    display:grid;place-items:center;font-size:11px;font-weight:700;flex:none}
+  .gift-h{text-align:center;font-family:var(--serif);font-weight:700;font-size:18px;color:var(--plum-deep);margin-bottom:3px}
+  .gift-s{text-align:center;font-size:12.5px;color:var(--ink-soft);font-weight:300;margin-bottom:18px}
+  .gifts{display:flex;flex-direction:column;gap:11px;margin-bottom:18px}
+  .gift{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#fff,var(--plum-soft));
+    border:1px solid #ECE0F4;border-radius:16px;padding:13px 15px}
+  .gift .ic{width:44px;height:44px;border-radius:13px;background:#fff;border:1px solid var(--line);
+    display:grid;place-items:center;font-size:20px;flex:none;box-shadow:0 6px 16px -10px rgba(62,36,86,.4)}
+  .gift .t b{display:block;font-weight:700;font-size:15px;color:var(--ink);line-height:1.4}
+  .gift .t span{font-size:12px;color:var(--ink-soft);font-weight:300}
+  .gift-note{font-size:12.5px;color:var(--ink-soft);font-weight:300;line-height:1.78;text-align:center;
+    background:var(--paper);border-radius:14px;padding:14px 18px;margin-bottom:22px}
+  .deal .center-cta{text-align:center}
+  @media(max-width:430px){ .perks{grid-template-columns:1fr} }
+
+  /* ---------------- 底部購買列 ---------------- */
+  .buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
+    background:rgba(247,244,250,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+    padding:12px 22px;}
+  body.detail .buybar{display:block}
+  .buybar .inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:14px}
+  .buybar .lab{flex:1;min-width:0}
+  .buybar .lab b{display:block;font-size:14px;font-weight:700;color:var(--plum-deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .buybar .lab span{font-size:11.5px;color:var(--ink-soft);font-weight:300}
+  .buybar .cta{margin:0;padding:14px 26px;font-size:15px;flex:none}
+
+  /* ---------------- 結尾 + 頁尾 ---------------- */
+  .closer{padding:60px 0 50px;text-align:center}
+  .closer h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,7vw,42px);color:var(--plum-deep);line-height:1.22;margin-bottom:10px}
+  .closer p{color:var(--ink-soft);font-weight:300;margin-bottom:26px}
+  footer{padding:34px 0 46px;text-align:center;border-top:1px solid var(--line)}
+  footer .brand{font-family:var(--serif);font-weight:700;letter-spacing:.1em;color:var(--plum-deep);font-size:15px}
+  footer .meta{font-size:12px;color:var(--ink-soft);font-weight:300;margin-top:7px;letter-spacing:.02em}
+
+  /* ---------------- reveal ---------------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){
+    .entries{grid-template-columns:1fr;max-width:340px;margin:0 auto}
+    .feat{grid-template-columns:1fr 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}.view{animation:none}
+  }
+</style>
+</head>
+<body class="home">
+
+<!-- ====== 頂部列 ====== -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#home" onclick="go('home')">塔塔流<small>TATA FLOW</small></a>
+    <a class="pill buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便 →</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ============================================================
+     首頁 VIEW
+     ============================================================ -->
+<section class="view active" id="home">
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow reveal">塔塔流 TATA FLOW　·　<b>限時團購</b></div>
+      <h1 class="title reveal">代謝<span class="cp"> CP</span></h1>
+      <div class="subtitle reveal">紫花青代謝丸 <span class="dot p"></span>×<span class="dot g"></span> 綠兒茶纖纖丸</div>
+      <p class="lead reveal">一個修復、一個搬運，雙核心一起才完整——這是我自己喝了超過五年的代謝保養組合。</p>
+      <a class="cta buy-link reveal" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
+    </div>
+  </header>
+
+  <!-- 為什麼我會定期使用代謝CP -->
+  <section class="block">
+    <div class="wrap">
+      <div class="seclabel reveal">塔塔的話</div>
+      <h2 class="sechead reveal">為什麼我會定期使用代謝 CP</h2>
+      <p class="secsub reveal">&nbsp;</p>
+      <div class="story-card reveal">
+        <div class="story-q">“</div>
+        <p>代謝 CP 是我自己固定回購、喝了<strong>超過五年</strong>的組合。</p>
+        <p>疫情那年開始居家工作，坐在電腦前的時間變長、活動量變少，身體很快就變得沈重、浮腫，連帶精神也跟著卡卡的。</p>
+        <p>我沒有用激烈節食，也沒有短期硬瘦——而是把「代謝保養」放回每天的生活：<strong>先把代謝底盤修好，再讓飲食、作息一起配合</strong>，大約一個月就找回狀態。</p>
+        <p>紫花青負責修復，綠兒茶負責搬運，這一前一後，就是我每天「代謝循環水」的基底，也是我願意一直回購、放心推薦給你的原因。</p>
+        <div class="sign">— 塔塔</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 代謝CP 介紹（圖 1-5）-->
+  <section class="block">
+    <div class="wrap">
+      <div class="seclabel reveal">代謝 CP 介紹</div>
+      <h2 class="sechead reveal">代謝 CP 是什麼？</h2>
+      <p class="secsub reveal">一個修復能量爐、一個搬運脂肪，雙核心搭配才完整。</p>
+      <div class="gallery">
+        <figure><img src="images/cp-1.jpg" alt="代謝CP 雙核心" loading="lazy"></figure>
+        <figure><img src="images/cp-2.jpg" alt="代謝CP 是什麼" loading="lazy"></figure>
+        <figure><img src="images/cp-3.jpg" alt="為什麼一起吃效果最好" loading="lazy"></figure>
+        <figure><img src="images/cp-4.jpg" alt="代謝CP 重點總整理" loading="lazy"></figure>
+        <figure><img src="images/cp-5.jpg" alt="哪些人適合代謝CP" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 兩個入口 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="seclabel reveal">深入了解</div>
+      <h2 class="sechead reveal">認識代謝 CP 的兩位主角</h2>
+      <p class="secsub reveal">點進去看完整介紹，想入手直接前往賣貨便。</p>
+      <div class="entries">
+
+        <div class="entry p reveal" role="button" tabindex="0" onclick="go('purple')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('purple')}">
+          <div class="thumb"><img src="https://myship.7-11.com.tw/i/cgdm/GM2606241638164/2606241230342051.jpg" alt="紫花青代謝丸" loading="lazy"></div>
+          <div class="entry-body">
+            <span class="role">紫 · 修復</span>
+            <h3>紫花青代謝丸</h3>
+            <p>代謝 CP 中的修復能量爐——先把代謝節奏、血糖與內在防護顧好。</p>
+            <div class="entry-go">看完整介紹 <span class="arrow">→</span></div>
+          </div>
+        </div>
+
+        <div class="entry g reveal" role="button" tabindex="0" onclick="go('green')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('green')}">
+          <div class="thumb"><img src="https://myship.7-11.com.tw/i/cgdm/GM2606241638164/2606241230535584.jpg" alt="綠兒茶纖纖丸" loading="lazy"></div>
+          <div class="entry-body">
+            <span class="role">綠 · 搬運</span>
+            <h3>綠兒茶纖纖丸</h3>
+            <p>代謝 CP 中的脂肪搬運手——幫熱量走向利用，而不是囤積。</p>
+            <div class="entry-go">看完整介紹 <span class="arrow">→</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 開團資訊 -->
+  <section class="block deal">
+    <div class="wrap">
+      <div class="seclabel reveal">塔塔流 · 限時團購</div>
+      <h2 class="sechead reveal">開團資訊</h2>
+      <p class="secsub reveal">這次優惠期間，給你多一點。</p>
+
+      <div class="dealcard reveal">
+        <div class="top">
+          <div class="k">限 時 快 閃</div>
+          <div class="d">✨ 6/25 – 6/30 優惠</div>
+        </div>
+        <div class="body">
+          <div class="perks">
+            <div class="pk"><span class="ck">✓</span>限時團購價</div>
+            <div class="pk"><span class="ck">✓</span>免運優惠</div>
+            <div class="pk"><span class="ck">✓</span>可刷卡</div>
+            <div class="pk"><span class="ck">✓</span>可超取付款</div>
+          </div>
+
+          <div class="gift-h">購買後截圖私訊塔塔</div>
+          <div class="gift-s">完成購買，加贈你這三項：</div>
+          <div class="gifts">
+            <div class="gift"><div class="ic">🎯</div><div class="t"><b>1:1 瘦身目標設定</b><span>依你的目標體態量身設定</span></div></div>
+            <div class="gift"><div class="ic">🥗</div><div class="t"><b>飲食習慣診斷</b><span>找出影響代謝的小地方</span></div></div>
+            <div class="gift"><div class="ic">🍽️</div><div class="t"><b>三餐份量建議</b><span>不用餓肚子的吃法</span></div></div>
+          </div>
+
+          <p class="gift-note">我會依照你的生活型態、飲食習慣、目標體態，幫你抓出比較適合你的吃法與搭配方式。</p>
+
+          <div class="center-cta">
+            <a class="cta buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結尾 CTA -->
+  <section class="closer">
+    <div class="wrap">
+      <h2 class="reveal">想開始調整代謝，<br>先從每天的循環水開始。</h2>
+      <p class="reveal">趁團購一起，免運、可刷卡、可超取。</p>
+      <a class="cta buy-link reveal" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand">塔塔流 · TATA FLOW</div>
+      <div class="meta">循環保養　·　7-ELEVEN 賣貨便安全交易</div>
+    </div>
+  </footer>
+
+</section>
+
+<!-- ============================================================
+     紫花青代謝丸 詳情 VIEW（圖 6-15，共 10 張）
+     ============================================================ -->
+<section class="view" id="purple">
+  <div class="dhead p">
+    <div class="wrap">
+      <button class="back" onclick="go('home')">← 返回代謝 CP</button>
+      <div class="dtag">紫 · 修復能量爐</div>
+      <h2 class="dtitle">紫花青代謝丸</h2>
+      <p class="dsub">代謝 CP 中的修復能量爐——先修復代謝節奏，再讓後續管理更有感。</p>
+    </div>
+  </div>
+  <section class="block" style="padding-top:24px">
+    <div class="wrap">
+
+      <!-- 簡介（跟綠兒茶同款版型）-->
+      <div class="feat p">
+        <div class="f reveal"><div class="ic">🕒</div><h4>修復代謝節奏</h4><p>幫助回到較穩定的能量運作</p></div>
+        <div class="f reveal"><div class="ic">💧</div><h4>血糖調節支持</h4><p>減少忽高忽低，維持續航</p></div>
+        <div class="f reveal"><div class="ic">🛡️</div><h4>內在防護打底</h4><p>對抗氧化與代謝壓力</p></div>
+      </div>
+
+      <div class="ingbar p reveal">
+        <h4>關鍵成分</h4>
+        <ul>
+          <li><span class="gem">◆</span><span><b>紫玉米花青素</b>——深色植化素，對應發炎與氧化壓力</span></li>
+          <li><span class="gem">◆</span><span><b>荔枝綠茶多酚萃取複合物</b>（美日雙專利），支持能量與脂質代謝</span></li>
+          <li><span class="gem">◆</span><span>國際研究聚焦 <b>Cyanidin ＋ Delphinidin</b>，關注發炎與胰島素敏感性</span></li>
+        </ul>
+      </div>
+
+      <!-- 完整介紹圖（圖 6-15）-->
+      <div class="gallery">
+        <figure><img src="images/purple-1.jpg" alt="紫花青代謝丸" loading="lazy"></figure>
+        <figure><img src="images/purple-2.jpg" alt="紫花青負責什麼" loading="lazy"></figure>
+        <figure><img src="images/purple-3.jpg" alt="為什麼需要修復代謝能量爐" loading="lazy"></figure>
+        <figure><img src="images/purple-4.jpg" alt="核心雙植化素" loading="lazy"></figure>
+        <figure><img src="images/purple-5.jpg" alt="修復代謝能量爐在修復什麼" loading="lazy"></figure>
+        <figure><img src="images/purple-6.jpg" alt="血糖調節與胰島素敏感性" loading="lazy"></figure>
+        <figure><img src="images/purple-7.jpg" alt="代謝與低度發炎" loading="lazy"></figure>
+        <figure><img src="images/purple-8.jpg" alt="循環與活動力" loading="lazy"></figure>
+        <figure><img src="images/purple-9.jpg" alt="腸道屏障" loading="lazy"></figure>
+        <figure><img src="images/purple-10.jpg" alt="誰適合紫花青代謝丸" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================
+     綠兒茶纖纖丸 詳情 VIEW（圖之後補；先放文字版型）
+     ============================================================ -->
+<section class="view" id="green">
+  <div class="dhead g">
+    <div class="wrap">
+      <button class="back" onclick="go('home')">← 返回代謝 CP</button>
+      <div class="dtag">綠 · 脂肪搬運手</div>
+      <h2 class="dtitle">綠兒茶纖纖丸</h2>
+      <p class="dsub">代謝 CP 中的脂肪搬運手——幫熱量走向利用，而不是囤積。</p>
+    </div>
+  </div>
+  <section class="block" style="padding-top:24px">
+    <div class="wrap">
+
+      <div class="feat">
+        <div class="f reveal"><div class="ic">🚚</div><h4>脂肪搬運</h4><p>幫脂肪走向氧化利用</p></div>
+        <div class="f reveal"><div class="ic">🔥</div><h4>熱量不囤積</h4><p>讓熱量更傾向被消耗</p></div>
+        <div class="f reveal"><div class="ic">🍃</div><h4>飯後輕盈</h4><p>餐後狀態更清爽少負擔</p></div>
+      </div>
+
+      <div class="ingbar reveal">
+        <h4>關鍵成分</h4>
+        <ul>
+          <li><span class="gem">◆</span><span><b>97% 高濃度茶多酚</b>（Tegreen 97<sup>®</sup>）</span></li>
+          <li><span class="gem">◆</span><span><b>兒茶素 ＋ EGCG</b>，支持熱量管理</span></li>
+          <li><span class="gem">◆</span><span>搭配紫花青代謝丸，<b>先修復、再搬運</b>更完整</span></li>
+        </ul>
+      </div>
+
+      <!-- 完整介紹圖（綠兒茶 1-10）-->
+      <div class="gallery">
+        <figure><img src="images/green-1.jpg" alt="綠兒茶纖纖丸" loading="lazy"></figure>
+        <figure><img src="images/green-2.jpg" alt="飯後輕盈感背後是什麼" loading="lazy"></figure>
+        <figure><img src="images/green-3.jpg" alt="代謝CP裡綠兒茶負責什麼" loading="lazy"></figure>
+        <figure><img src="images/green-4.jpg" alt="讓脂肪走對路 科研數據" loading="lazy"></figure>
+        <figure><img src="images/green-5.jpg" alt="為什麼你會需要綠兒茶" loading="lazy"></figure>
+        <figure><img src="images/green-6.jpg" alt="綠兒茶關鍵成分" loading="lazy"></figure>
+        <figure><img src="images/green-7.jpg" alt="哪些人適合綠兒茶" loading="lazy"></figure>
+        <figure><img src="images/green-8.jpg" alt="為什麼不是多喝茶就好" loading="lazy"></figure>
+        <figure><img src="images/green-9.jpg" alt="不只體態，也照顧日常狀態" loading="lazy"></figure>
+        <figure><img src="images/green-10.jpg" alt="先減少外在壓力" loading="lazy"></figure>
+      </div>
+
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ====== 底部購買列（詳情頁才顯示）====== -->
+<div class="buybar">
+  <div class="inner">
+    <div class="lab">
+      <b id="buy-title">前往賣貨便購買</b>
+      <span>7-ELEVEN 賣貨便　·　免運 · 可刷卡 · 可超取</span>
+    </div>
+    <a class="cta buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">立即購買 <span class="arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+  const TITLES = {
+    home:  "代謝 CP｜塔塔流 TATA FLOW",
+    purple:"紫花青代謝丸｜代謝 CP",
+    green: "綠兒茶纖纖丸｜代謝 CP"
+  };
+  const BUYLAB = { purple:"購買 紫花青代謝丸", green:"購買 綠兒茶纖纖丸", home:"前往賣貨便購買" };
+
+  // reveal on scroll
+  let io;
+  function runReveal(){
+    if(io) io.disconnect();
+    io = new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    },{threshold:.08, rootMargin:"0px 0px -20px 0px"});
+    document.querySelectorAll(".view.active .reveal:not(.in)").forEach(el=>io.observe(el));
+  }
+
+  function setView(id){
+    if(!document.getElementById(id)) id = "home";
+    document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    document.body.classList.toggle("detail", id!=="home");
+    const bt = document.getElementById("buy-title");
+    if(bt) bt.textContent = BUYLAB[id] || BUYLAB.home;
+    try{ document.title = TITLES[id] || TITLES.home; }catch(e){}
+    window.scrollTo(0,0);
+    runReveal();
+  }
+
+  // 用 hash 切換（不用 pushState，避免沙盒/跨來源報錯）
+  function go(id){
+    setView(id);
+    try{ if((location.hash.slice(1)||"home") !== id) location.hash = id; }catch(e){}
+  }
+  window.addEventListener("hashchange", ()=> setView(location.hash.slice(1) || "home"));
+
+  setView(location.hash.slice(1) || "home");
+</script>
+</body>
+</html>
