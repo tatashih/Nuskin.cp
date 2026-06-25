@@ -223,6 +223,7 @@
     cursor:pointer;transition:transform .3s,color .3s,border-color .3s;font-family:var(--sans)}
   .home-btn:hover{transform:translateY(-2px);color:var(--plum);border-color:var(--plum)}
   .home-btn:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+  .entry-single{max-width:360px;margin:0 auto}
 
   /* ---------------- 底部購買列 ---------------- */
   .buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
@@ -452,7 +453,30 @@
     </div>
   </section>
 
-  <!-- 開團資訊（子頁同步）-->
+  <!-- 接著看另一位主角（首頁大卡形式）+ 返回主頁 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="seclabel">下一位主角</div>
+      <h2 class="sechead">接著看 綠兒茶纖纖丸</h2>
+      <p class="secsub">代謝 CP 的另一半，負責脂肪搬運。</p>
+      <div class="entry-single">
+        <div class="entry g" role="button" tabindex="0" onclick="go('green')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('green')}">
+          <div class="thumb"><img src="https://myship.7-11.com.tw/i/cgdm/GM2606241638164/2606241230535584.jpg" alt="綠兒茶纖纖丸" loading="lazy"></div>
+          <div class="entry-body">
+            <span class="role">綠 · 搬運</span>
+            <h3>綠兒茶纖纖丸</h3>
+            <p>代謝 CP 中的脂肪搬運手——幫熱量走向利用，而不是囤積。</p>
+            <div class="entry-go">看完整介紹 <span class="arrow">→</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="center-cta" style="margin-top:22px">
+        <button class="home-btn" onclick="go('home')">↑ 返回主頁</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 開團資訊（置底）-->
   <section class="block deal">
     <div class="wrap">
       <div class="seclabel">塔塔流 · 限時團購</div>
@@ -479,20 +503,6 @@
             <a class="cta buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 看另一位主角 + 返回主頁 -->
-  <section class="block" style="padding-top:0">
-    <div class="wrap">
-      <div class="crosslink g" role="button" tabindex="0" onclick="go('green')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('green')}">
-        <div class="cl-ic">綠</div>
-        <div class="cl-main"><span class="s">接著看另一位主角</span><b>綠兒茶纖纖丸 · 脂肪搬運手</b></div>
-        <span class="arrow">→</span>
-      </div>
-      <div class="center-cta">
-        <button class="home-btn" onclick="go('home')">↑ 返回主頁</button>
       </div>
     </div>
   </section>
@@ -546,7 +556,30 @@
     </div>
   </section>
 
-  <!-- 開團資訊（子頁同步）-->
+  <!-- 接著看另一位主角（首頁大卡形式）+ 返回主頁 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="seclabel">下一位主角</div>
+      <h2 class="sechead">接著看 紫花青代謝丸</h2>
+      <p class="secsub">代謝 CP 的另一半，負責修復能量爐。</p>
+      <div class="entry-single">
+        <div class="entry p" role="button" tabindex="0" onclick="go('purple')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('purple')}">
+          <div class="thumb"><img src="https://myship.7-11.com.tw/i/cgdm/GM2606241638164/2606241230342051.jpg" alt="紫花青代謝丸" loading="lazy"></div>
+          <div class="entry-body">
+            <span class="role">紫 · 修復</span>
+            <h3>紫花青代謝丸</h3>
+            <p>代謝 CP 中的修復能量爐——先把代謝節奏、血糖與內在防護顧好。</p>
+            <div class="entry-go">看完整介紹 <span class="arrow">→</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="center-cta" style="margin-top:22px">
+        <button class="home-btn" onclick="go('home')">↑ 返回主頁</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 開團資訊（置底）-->
   <section class="block deal">
     <div class="wrap">
       <div class="seclabel">塔塔流 · 限時團購</div>
@@ -573,20 +606,6 @@
             <a class="cta buy-link" href="https://myship.7-11.com.tw/general/detail/GM2606241638164" target="_blank" rel="noopener">前往賣貨便團購 <span class="arrow">→</span></a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 看另一位主角 + 返回主頁 -->
-  <section class="block" style="padding-top:0">
-    <div class="wrap">
-      <div class="crosslink p" role="button" tabindex="0" onclick="go('purple')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();go('purple')}">
-        <div class="cl-ic">紫</div>
-        <div class="cl-main"><span class="s">接著看另一位主角</span><b>紫花青代謝丸 · 修復能量爐</b></div>
-        <span class="arrow">→</span>
-      </div>
-      <div class="center-cta">
-        <button class="home-btn" onclick="go('home')">↑ 返回主頁</button>
       </div>
     </div>
   </section>
